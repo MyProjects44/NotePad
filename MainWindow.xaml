@@ -1,0 +1,104 @@
+﻿<Window x:Class="BuddyProjekt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BuddyProjekt"
+        mc:Ignorable="d"
+        Title="Note" Height="600" Width="520" Icon="icon\icon.ico"
+        
+
+        MinWidth="315"
+        MinHeight="200"
+        Topmost = "True"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="SingleBorderWindow">
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        <Grid VerticalAlignment="Top" Column="1">
+            <TextBox x:Name = "Notiz_benennen"
+                HorizontalAlignment = "right"
+                VerticalAlignment="Top"
+                Width = "100" 
+                Height = "25"
+                FontSize = "16"
+                Padding = "0,0,25,0"
+                TextWrapping = "Wrap"
+                Grid.Column="1"
+            />
+            <Button x:Name = "btn_hinzufuegen" 
+                HorizontalAlignment = "right"
+                VerticalAlignment="Top"
+                Width = "20"
+                Height = "20"
+                Margin = "2,2,2,0"
+                Click = "btn_hinzufuegen_Click"
+                Content = "+"
+                Padding = "0"
+                Grid.Column="1"
+            />
+            <CheckBox IsChecked="True" 
+                Checked="alwaysOnTop_IsChecked" 
+                Unchecked="alwaysOnTop_IsUnchecked" 
+                Content="Always on Top"  
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top"
+                Margin="0, 25, 5, 0"
+                Grid.Column="1"
+            />
+        </Grid>
+        <TabControl x:Name = "tabDynamisch" 
+            Grid.Column="0"
+            Grid.Row="0"
+            HorizontalAlignment = "Stretch"
+            VerticalAlignment="Stretch"
+            ItemsSource ="{Binding Notizen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock x:Name = "TextInhaltNotiz" 
+                            Text = "{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                            Padding = "0,0,25,0"
+                            Foreground = "{Binding ListofColors, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Name = "btn_entfernen"
+                            DockPanel.Dock = "Right"
+                            Click = "btn_entfernen_Click"
+                            HorizontalAlignment = "Right"
+                            Margin = "5,0,0,0"
+                            Width = "15"
+                            Height = "17"
+                            Padding = "0"
+                            Content = "X"/>
+                    </Grid>
+                </DataTemplate> 
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <ComboBox
+                            ItemsSource = "{Binding Path=listofColors}"
+                            DisplayMemberPath = "Color"
+                            SelectedValue = "{Binding Path = SelectedColor}"
+                            Grid.Row="0"/>    
+                        <TextBox Text = "{Binding Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" 
+                            Background = "#FFFF99" 
+                            Grid.Row="1"/>  
+                              
+                    </Grid>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+    </Grid>
+</Window>
