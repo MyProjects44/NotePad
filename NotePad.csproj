@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>icon\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+
+    <Resource Include="icon\*.ico"/>
+
+
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+
+    <ItemGroup>
+
+    <ANTLR Include="icon\*"/>
+
+    </ItemGroup>
+
+    <Copy SourceFiles="@(ANTLR)" DestinationFolder="$(OutDir)\icon" />
+
+  </Target>
+</Project>

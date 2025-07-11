@@ -2,7 +2,7 @@
 using System.Windows;
 using Forms = System.Windows.Forms;
 
-namespace BuddyProjekt
+namespace NotePad
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -19,7 +19,7 @@ namespace BuddyProjekt
             _notifyIcon.Icon = new System.Drawing.Icon(@"icon\icon.ico");
             _notifyIcon.Visible = true;
             _notifyIcon.DoubleClick += NotifyIcon_DoubleClick;
-            _notifyIcon.Text = "BuddyProjekt";
+            _notifyIcon.Text = "NotePad";
             _notifyIcon.ContextMenuStrip = new Forms.ContextMenuStrip();
             _notifyIcon.ContextMenuStrip.Items.Add("Öffnen", null, OnStatusOpen);
             _notifyIcon.ContextMenuStrip.Items.Add("Beenden", null, OnStatusClicked);

@@ -5,7 +5,7 @@ using Benutzer_Notiz;
 using System.Collections.ObjectModel;
 using System.Windows.Media;
 
-namespace BuddyProjekt
+namespace NotePad
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
