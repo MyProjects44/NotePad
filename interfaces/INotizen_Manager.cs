@@ -1,12 +1,14 @@
 using System;
+using System.Collections.ObjectModel;
+using Benutzer_Notiz;
 
-namespace Notizen_Manager
+namespace Notiz_Manager
 {
     public interface INotizen_Manager
     {
-        public Notizen_Manager();
+        ObservableCollection<INotiz> Notizen {get;}
         public void Erstellen();
-        public void Hinzuschreiben();
+        public void HinzuSchreiben();
         public void LadenAusDatei();
     }
 } 

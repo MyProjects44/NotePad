@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rWlM38OT1X4=",
+  "dgSpecHash": "2krU1tPW08g=",
   "success": true,
-  "projectFilePath": "C:\\Users\\athan\\source\\repos\\notiztool\\NotePad.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\athan\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
-    "C:\\Users\\athan\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
-    "C:\\Users\\athan\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
-    "C:\\Users\\athan\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.36\\microsoft.netcore.app.host.win-x64.6.0.36.nupkg.sha512"
-  ],
+  "projectFilePath": "E:\\C# Programmierung\\Github\\NotePad\\NotePad.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

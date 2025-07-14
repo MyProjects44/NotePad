@@ -1,5 +1,5 @@
 using System;
-using Notizen_Manager;
+using Notiz_Manager;
 using System.ComponentModel;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
@@ -16,13 +16,6 @@ namespace Benutzer_Notiz
             get{return _l;} 
             private set{_l = value;}
         }
-        static Notiz()
-        {
-            listofColors.Add(Brushes.Blue);
-            listofColors.Add(Brushes.Red);
-            listofColors.Add(Brushes.Green);
-            listofColors.Add(Brushes.Yellow);
-        }
 
         private string _selectedColor;
         public string SelectedColor
@@ -37,10 +30,10 @@ namespace Benutzer_Notiz
                 NotifyPropertyChanged("SelectedColor");
             }
         }
-        private INotizen_Manager ?notiz_Manager {get; set;}
-        private string ?krizelContent = "";
-        public string ?Title{ get; set; }
-        public string ?Content 
+        private INotizen_Manager notiz_Manager {get; set;}
+        private string krizelContent = "";
+        public string Title{ get; set; }
+        public string Content 
         { 
             get
             {
@@ -53,16 +46,21 @@ namespace Benutzer_Notiz
             }
         }
         //Muss drinen bleiben sonst geht die Serializierung nicht
-        protected Notiz()
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+        public Notiz(){}
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+        public Notiz(INotizen_Manager m)
         {
-
-        }
-        public Notiz( Notizen_Manager m)
-        {
+            listofColors.Add(Brushes.Blue);
+            listofColors.Add(Brushes.Red);
+            listofColors.Add(Brushes.Green);
+            listofColors.Add(Brushes.Yellow);
+            _selectedColor = "blue";
+            Title = "";
             this.notiz_Manager = m;
         }
 
-        public void setManager( Notizen_Manager m)
+        public void setManager( INotizen_Manager m)
         {
             this.notiz_Manager = m;
         }

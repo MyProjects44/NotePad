@@ -4,17 +4,18 @@ using System.Xml.Serialization;
 using System.Collections.ObjectModel;
 using Benutzer_Notiz;
 
-namespace Notizen_Manager : INotizen_Manager
+namespace Notiz_Manager 
 {
     
-    public class Notizen_Manager
+    public class Notizen_Manager : INotizen_Manager
     {  
-        private  ObservableCollection<Notiz> Notizen {get; set;}
+        private  ObservableCollection<INotiz> _Notizen {get; set;}
+        public ObservableCollection<INotiz> Notizen {get { return _Notizen;} set{ _Notizen = value; }}
 
 
         public Notizen_Manager()
         {
-            Notizen = new ObservableCollection<Notiz>();
+            _Notizen = new ObservableCollection<INotiz>();
         }
 
 
@@ -29,7 +30,7 @@ namespace Notizen_Manager : INotizen_Manager
                 using (FileStream notiz_Datei = new FileStream(datei_Pfad, FileMode.Create))
                 {
                     XmlSerializer XML = new XmlSerializer(typeof(Collection<Notiz>));
-                    XML.Serialize(notiz_Datei, Notizen);
+                    XML.Serialize(notiz_Datei, _Notizen);
                 }
             }
             catch(ArgumentNullException)
@@ -51,7 +52,7 @@ namespace Notizen_Manager : INotizen_Manager
             {
                 using (TextWriter notiz_Datei = new StreamWriter(datei_Pfad))
                 {  
-                    XML.Serialize(notiz_Datei, Notizen);
+                    XML.Serialize(notiz_Datei, _Notizen);
                 }
             }
             catch(ArgumentNullException)
@@ -63,7 +64,7 @@ namespace Notizen_Manager : INotizen_Manager
             //Methode zum Laden einer Bestehenden XML datei, die den Inhalt der Datei zurück gibt an den Aufrufer
         public void LadenAusDatei()
         {
-            XmlSerializer XML = new XmlSerializer(typeof(ObservableCollection<Notiz>) as Type);
+            XmlSerializer XML = new XmlSerializer(typeof(ObservableCollection<Notiz>));
             ObservableCollection<Notiz>? ret = null;
             try
             {
@@ -73,7 +74,7 @@ namespace Notizen_Manager : INotizen_Manager
                 }
                 foreach(var n in ret){
                     n.setManager(this);
-                    Notizen.Add(n);
+                    _Notizen.Add(n);
                 }
             }
             catch(FileNotFoundException)
