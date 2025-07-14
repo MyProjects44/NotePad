@@ -1,5 +1,5 @@
 using System;
-using Notiz_Verwaltung;
+using Notizen_Manager;
 using System.ComponentModel;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 namespace Benutzer_Notiz
 {
     [Serializable()]
-    public class Notiz : INotifyPropertyChanged
+    public class Notiz : INotifyPropertyChanged, INotiz
     {
 
         private static ObservableCollection<SolidColorBrush> _l = new ObservableCollection<SolidColorBrush>();
@@ -24,7 +24,7 @@ namespace Benutzer_Notiz
             listofColors.Add(Brushes.Yellow);
         }
 
-        public string _selectedColor;
+        private string _selectedColor;
         public string SelectedColor
         {
             get
@@ -37,7 +37,7 @@ namespace Benutzer_Notiz
                 NotifyPropertyChanged("SelectedColor");
             }
         }
-        private Notizen_Manager ?notiz_Manager {get; set;}
+        private INotizen_Manager ?notiz_Manager {get; set;}
         private string ?krizelContent = "";
         public string ?Title{ get; set; }
         public string ?Content 

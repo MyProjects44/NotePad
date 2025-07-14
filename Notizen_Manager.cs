@@ -4,12 +4,12 @@ using System.Xml.Serialization;
 using System.Collections.ObjectModel;
 using Benutzer_Notiz;
 
-namespace Notiz_Verwaltung
+namespace Notizen_Manager : INotizen_Manager
 {
     
     public class Notizen_Manager
     {  
-        public  ObservableCollection<Notiz> Notizen {get; set;}
+        private  ObservableCollection<Notiz> Notizen {get; set;}
 
 
         public Notizen_Manager()
