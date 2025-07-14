@@ -4,7 +4,7 @@ using System.Windows.Media;
 
 namespace Converter
 {
-    public class ColorToBrushConverter : IValueConverter {
+    public class ColorToBrushConverter {
 
     public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
         if (!(value is Color))

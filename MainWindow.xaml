@@ -87,8 +87,8 @@
                             <RowDefinition Height="2*"/>
                         </Grid.RowDefinitions>
                         <ComboBox
-                            ItemsSource = "{Binding Path=listofColors}"
-                            DisplayMemberPath = "ColorContext"
+                            ItemsSource = "{Binding Path=colorNames}"
+                            DisplayMemberPath = "Color"
                             SelectedValue = "{Binding Path = SelectedColor}"
                             Grid.Row="0"/>    
                         <TextBox Text = "{Binding Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" 

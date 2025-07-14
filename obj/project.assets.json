@@ -8,24 +8,31 @@
     "net9.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\athanasiosz\\.nuget\\packages\\": {}
+    "C:\\Users\\athan\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\C# Programmierung\\Github\\NotePad\\NotePad.csproj",
+      "projectUniqueName": "C:\\Users\\athan\\source\\repos\\NotePad\\NotePad.csproj",
       "projectName": "NotePad",
-      "projectPath": "E:\\C# Programmierung\\Github\\NotePad\\NotePad.csproj",
-      "packagesPath": "C:\\Users\\athanasiosz\\.nuget\\packages\\",
-      "outputPath": "E:\\C# Programmierung\\Github\\NotePad\\obj\\",
+      "projectPath": "C:\\Users\\athan\\source\\repos\\NotePad\\NotePad.csproj",
+      "packagesPath": "C:\\Users\\athan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\athan\\source\\repos\\NotePad\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\athanasiosz\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\athan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

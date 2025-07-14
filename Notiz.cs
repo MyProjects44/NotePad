@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using Converter2;
 
 namespace Benutzer_Notiz
 {
@@ -28,7 +29,23 @@ namespace Benutzer_Notiz
          };
         public static ObservableCollection<Brush> listofColors {get { return _l; } set { listofColors =  value; }}
 
-
+        public static ObservableCollection<SolidColorBrush> colorNames
+        {
+            get {
+                return (ObservableCollection<SolidColorBrush>) _l; 
+            }
+            set
+            {
+                var converter = new BrushConverter();
+                Brush res = null;
+                foreach (var color in _l)
+                {
+                    //Console.WriteLine(color);
+                    res = color;
+                }
+                colorNames = (ObservableCollection<SolidColorBrush>)converter.ConvertFromString(res.ToString());
+            }
+        }
         private string _selectedColor;
         public string SelectedColor
         {
