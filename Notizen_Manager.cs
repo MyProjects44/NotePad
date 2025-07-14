@@ -9,13 +9,13 @@ namespace Notiz_Manager
     
     public class Notizen_Manager : INotizen_Manager
     {  
-        private  ObservableCollection<INotiz> _Notizen {get; set;}
-        public ObservableCollection<INotiz> Notizen {get { return _Notizen;} set{ _Notizen = value; }}
+        private  ObservableCollection<Notiz> _Notizen {get; set;}
+        public ObservableCollection<Notiz> Notizen {get { return _Notizen;} set{ _Notizen = value; }}
 
 
         public Notizen_Manager()
         {
-            _Notizen = new ObservableCollection<INotiz>();
+            _Notizen = new ObservableCollection<Notiz>();
         }
 
 

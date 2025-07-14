@@ -6,7 +6,7 @@ namespace Notiz_Manager
 {
     public interface INotizen_Manager
     {
-        ObservableCollection<INotiz> Notizen {get;}
+        ObservableCollection<Notiz> Notizen {get;}
         public void Erstellen();
         public void HinzuSchreiben();
         public void LadenAusDatei();
