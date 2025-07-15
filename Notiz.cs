@@ -3,22 +3,13 @@ using Notiz_Manager;
 using System.ComponentModel;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
-using System.Collections.Generic;
-using Converter2;
+
 
 namespace Benutzer_Notiz
 {
     [Serializable()]
     public class Notiz : INotifyPropertyChanged, INotiz
     {
-
-        public enum Colored
-        {
-            red,
-            black,
-            violet,
-            green
-        }
         private static ObservableCollection<Brush> _l = new ObservableCollection<Brush>
         {
             Brushes.Red,
@@ -27,25 +18,21 @@ namespace Benutzer_Notiz
             Brushes.Green
 
          };
-        public static ObservableCollection<Brush> listofColors {get { return _l; } set { listofColors =  value; }}
-
-        public static ObservableCollection<SolidColorBrush> colorNames
+        public static ObservableCollection<System.Drawing.Color> listofColoredNames
         {
-            get {
-                return (ObservableCollection<SolidColorBrush>) _l; 
-            }
-            set
+            get
             {
-                var converter = new BrushConverter();
-                Brush res = null;
+                var gj = _l;
+                ObservableCollection<System.Drawing.Color> collectionOfColors = new ObservableCollection<System.Drawing.Color>();
                 foreach (var color in _l)
                 {
-                    //Console.WriteLine(color);
-                    res = color;
+                    System.Drawing.Color stringColor = System.Drawing.ColorTranslator.FromHtml(color.ToString());
+                    collectionOfColors.Add(stringColor);
                 }
-                colorNames = (ObservableCollection<SolidColorBrush>)converter.ConvertFromString(res.ToString());
+                return collectionOfColors;
             }
         }
+
         private string _selectedColor;
         public string SelectedColor
         {
@@ -55,7 +42,19 @@ namespace Benutzer_Notiz
             }
             set
             {
-                _selectedColor = value;
+                try
+                {
+                    string getColorName = value.Split()[1];
+                    string removeFirstBracket = getColorName.Split("[")[1];
+                    string getFinalColorName = removeFirstBracket.Split("]")[0];
+                    int ColorValue = System.Drawing.Color.FromName(getFinalColorName).ToArgb();
+                    string colorHex = string.Format("#{0:x6}", ColorValue);
+                    _selectedColor = colorHex;
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    _selectedColor = value;
+                }
                 NotifyPropertyChanged("SelectedColor");
             }
         }

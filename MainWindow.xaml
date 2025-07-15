@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotePad"
-        xmlns:custom="clr-namespace:Converter"
         mc:Ignorable="d"
         Title="Note" Height="600" Width="520" Icon="icon\icon.ico"
         
@@ -66,7 +65,8 @@
                         <TextBlock x:Name = "TextInhaltNotiz" 
                             Text = "{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                             Padding = "0,0,25,0"
-                            Foreground = "{Binding SelectedColor, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            Background = "{Binding SelectedColor, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                            Foreground="WhiteSmoke"/>
                         <Button Name = "btn_entfernen"
                             DockPanel.Dock = "Right"
                             Click = "btn_entfernen_Click"
@@ -87,8 +87,11 @@
                             <RowDefinition Height="2*"/>
                         </Grid.RowDefinitions>
                         <ComboBox
-                            ItemsSource = "{Binding Path=colorNames}"
-                            DisplayMemberPath = "Color"
+                            IsEditable="True" 
+                            IsReadOnly="True" 
+                            Text="Notiz Farbe ändern"
+                            ItemsSource = "{Binding Path=listofColoredNames}"
+                            DisplayMemberPath = "Name"
                             SelectedValue = "{Binding Path = SelectedColor}"
                             Grid.Row="0"/>    
                         <TextBox Text = "{Binding Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" 

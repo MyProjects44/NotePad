@@ -25,7 +25,7 @@ namespace NotePad
         public void btn_hinzufuegen_Click(object sender, RoutedEventArgs e )
         {   
             
-            Notiz notiz = new Notiz(noteObject) {Title = Notiz_benennen.Text};
+            Notiz notiz = new Notiz(noteObject) {Title = Notiz_benennen.Text, SelectedColor = "Color [Black]"};
             //INotiz notiz = new Notiz(noteObject) {Title = Notiz_benennen.Text};
             noteObject.Notizen.Add(notiz);
             Notiz_benennen.Text = string.Empty; 
