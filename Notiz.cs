@@ -3,6 +3,7 @@ using Notiz_Manager;
 using System.ComponentModel;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
+using System.Windows.Controls;
 
 
 namespace Benutzer_Notiz
@@ -22,7 +23,6 @@ namespace Benutzer_Notiz
         {
             get
             {
-                var gj = _l;
                 ObservableCollection<System.Drawing.Color> collectionOfColors = new ObservableCollection<System.Drawing.Color>();
                 foreach (var color in _l)
                 {

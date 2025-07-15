@@ -93,11 +93,10 @@
                             ItemsSource = "{Binding Path=listofColoredNames}"
                             DisplayMemberPath = "Name"
                             SelectedValue = "{Binding Path = SelectedColor}"
-                            Grid.Row="0"/>    
+                            Grid.Row="0"/>
                         <TextBox Text = "{Binding Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" 
                             Background = "#FFFF99" 
-                            Grid.Row="1"/>  
-                              
+                            Grid.Row="1"/>
                     </Grid>
                 </DataTemplate>
             </TabControl.ContentTemplate>
