@@ -1,10 +1,10 @@
-name: "Deploy Project Commands"
+name: "Deploy Project NotePad"
 
 #test
 on:
   push:
     tags:
-      - "class-commands/v*"
+      - "class-notepad/v*"
 permissions: write-all
 env:
   PROJECT_PATH: NotePad.csproj
