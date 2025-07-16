@@ -1,12 +1,11 @@
 name: "Deploy Project Commands"
-permissions:
-  contents: write
+
 
 on:
   push:
     tags:
       - "class-commands/v*"
-
+permissions: write-all
 env:
   PROJECT_PATH: NotePad.csproj
 jobs:
