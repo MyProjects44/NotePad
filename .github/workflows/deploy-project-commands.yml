@@ -21,7 +21,7 @@ jobs:
       
       - run: dotnet restore ${{ env.PROJECT_PATH }} -p:SelfContained=true
       - run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
-      - run: dotnet publish ${{ env.PROJECT_PATH }} -c Release -r win-x64 --self-contained -p:PublishSingleFile=true
+      - run: dotnet publish ${{ env.PROJECT_PATH }} -c Release -r win-x64 --self-contained -p:PublishReadyToRun=true
       
       - uses: actions/create-release@v1
         id: create_release
