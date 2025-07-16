@@ -1,20 +1,18 @@
-﻿<Window x:Class="BuddyProjekt.MainWindow"
+﻿<Window x:Class="NotePad.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BuddyProjekt"
+        xmlns:local="clr-namespace:NotePad"
         mc:Ignorable="d"
         Title="Note" Height="600" Width="520" Icon="icon\icon.ico"
         
-
         MinWidth="315"
         MinHeight="200"
         Topmost = "True"
         ShowInTaskbar="False"
         WindowStartupLocation="CenterScreen"
         WindowStyle="SingleBorderWindow">
-
     <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -67,7 +65,8 @@
                         <TextBlock x:Name = "TextInhaltNotiz" 
                             Text = "{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                             Padding = "0,0,25,0"
-                            Foreground = "{Binding ListofColors, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            Background = "{Binding SelectedColor, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                            Foreground="WhiteSmoke"/>
                         <Button Name = "btn_entfernen"
                             DockPanel.Dock = "Right"
                             Click = "btn_entfernen_Click"
@@ -88,14 +87,16 @@
                             <RowDefinition Height="2*"/>
                         </Grid.RowDefinitions>
                         <ComboBox
-                            ItemsSource = "{Binding Path=listofColors}"
-                            DisplayMemberPath = "Color"
+                            IsEditable="True" 
+                            IsReadOnly="True" 
+                            Text="Notiz Farbe ändern"
+                            ItemsSource = "{Binding Path=listofColoredNames}"
+                            DisplayMemberPath = "Name"
                             SelectedValue = "{Binding Path = SelectedColor}"
-                            Grid.Row="0"/>    
+                            Grid.Row="0"/>
                         <TextBox Text = "{Binding Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" 
                             Background = "#FFFF99" 
-                            Grid.Row="1"/>  
-                              
+                            Grid.Row="1"/>
                     </Grid>
                 </DataTemplate>
             </TabControl.ContentTemplate>

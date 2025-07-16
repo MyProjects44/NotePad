@@ -1,11 +1,11 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using Notiz_Verwaltung;
+using Notiz_Manager;
 using Benutzer_Notiz;
 using System.Collections.ObjectModel;
 using System.Windows.Media;
 
-namespace BuddyProjekt
+namespace NotePad
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -14,6 +14,7 @@ namespace BuddyProjekt
     public partial class MainWindow : Window
     {
         Notizen_Manager noteObject;
+        //INotizen_Manager noteObject;
         public MainWindow()
         {
             InitializeComponent();
@@ -24,7 +25,8 @@ namespace BuddyProjekt
         public void btn_hinzufuegen_Click(object sender, RoutedEventArgs e )
         {   
             
-            Notiz notiz = new Notiz(noteObject) {Title = Notiz_benennen.Text};
+            Notiz notiz = new Notiz(noteObject) {Title = Notiz_benennen.Text, SelectedColor = "Color [Black]"};
+            //INotiz notiz = new Notiz(noteObject) {Title = Notiz_benennen.Text};
             noteObject.Notizen.Add(notiz);
             Notiz_benennen.Text = string.Empty; 
             

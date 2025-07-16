@@ -1,5 +1,0 @@
-E:\C# Programmierung\Buddy_Projekt_Notizprogramm\buddy_projekt_notizprogramm\bin\Release\net6.0-windows\publish\BuddyProjekt.exe
-E:\C# Programmierung\Buddy_Projekt_Notizprogramm\buddy_projekt_notizprogramm\bin\Release\net6.0-windows\publish\BuddyProjekt.dll
-E:\C# Programmierung\Buddy_Projekt_Notizprogramm\buddy_projekt_notizprogramm\bin\Release\net6.0-windows\publish\BuddyProjekt.deps.json
-E:\C# Programmierung\Buddy_Projekt_Notizprogramm\buddy_projekt_notizprogramm\bin\Release\net6.0-windows\publish\BuddyProjekt.runtimeconfig.json
-E:\C# Programmierung\Buddy_Projekt_Notizprogramm\buddy_projekt_notizprogramm\bin\Release\net6.0-windows\publish\BuddyProjekt.pdb

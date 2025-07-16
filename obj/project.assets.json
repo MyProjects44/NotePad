@@ -1,11 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net9.0-windows7.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net9.0-windows7.0": []
   },
   "packageFolders": {
     "C:\\Users\\athanasiosz\\.nuget\\packages\\": {}
@@ -13,24 +13,24 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\C# Programmierung\\Buddy_Projekt_Notizprogramm\\buddy_projekt_notizprogramm\\BuddyProjekt.csproj",
-      "projectName": "BuddyProjekt",
-      "projectPath": "E:\\C# Programmierung\\Buddy_Projekt_Notizprogramm\\buddy_projekt_notizprogramm\\BuddyProjekt.csproj",
+      "projectUniqueName": "E:\\C# Programmierung\\Github\\NotePad\\NotePad.csproj",
+      "projectName": "NotePad",
+      "projectPath": "E:\\C# Programmierung\\Github\\NotePad\\NotePad.csproj",
       "packagesPath": "C:\\Users\\athanasiosz\\.nuget\\packages\\",
-      "outputPath": "E:\\C# Programmierung\\Buddy_Projekt_Notizprogramm\\buddy_projekt_notizprogramm\\obj\\",
+      "outputPath": "E:\\C# Programmierung\\Github\\NotePad\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\athanasiosz\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net9.0-windows"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+        "net9.0-windows7.0": {
+          "targetAlias": "net9.0-windows",
           "projectReferences": {}
         }
       },
@@ -38,11 +38,17 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
-      "net6.0-windows7.0": {
-        "targetAlias": "net6.0-windows",
+      "net9.0-windows7.0": {
+        "targetAlias": "net9.0-windows",
         "imports": [
           "net461",
           "net462",
@@ -62,7 +68,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
