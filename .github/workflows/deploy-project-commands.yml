@@ -19,7 +19,7 @@ jobs:
         with:
           dotnet-version: 9.0.x
       
-      - run: dotnet restore ${{ env.PROJECT_PATH }} -p:SelfContained=true
+      - run: dotnet restore ${{ env.PROJECT_PATH }}
       - run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
       - run: dotnet publish ${{ env.PROJECT_PATH }} -c Release -r win-x64 --self-contained
       
