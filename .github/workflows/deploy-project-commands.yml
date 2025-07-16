@@ -20,7 +20,7 @@ jobs:
           dotnet-version: 9.0.x
       
       - run: dotnet restore ${{ env.PROJECT_PATH }}
-      - run: dotnet build ${{ env.PROJECT_PATH }} -c Release --no-restore
+      - run: dotnet build ${{ env.PROJECT_PATH }} -c Release
       - run: dotnet publish ${{ env.PROJECT_PATH }} -c Release -r win-x64 --self-contained
       
       - uses: actions/create-release@v1
