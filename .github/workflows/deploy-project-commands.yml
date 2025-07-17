@@ -35,9 +35,9 @@ jobs:
         run: dotnet restore ${{ env.SOLUTION_NAME }}
       #Create the app
       - name: Create the app
-        run: dotnet build ${{ env.SOLUTION_NAME }} -c Release --no-restore
+        run: dotnet build ${{ env.SOLUTION_NAME }} -c Release
       
-      - run: dotnet publish ${{ env.SOLUTION_NAME }} -c Release -r win-x64 -p:PublishSingleFile=true --self-contained true --no-restore
+      - run: dotnet publish ${{ env.SOLUTION_NAME }} -c Release -r win-x64 -p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true --self-contained true
       
       - uses: actions/create-release@v1
         id: create_release
