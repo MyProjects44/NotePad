@@ -32,10 +32,10 @@ jobs:
       
         #Restore the application
       - name: Restore the Application
-        run: msbuild ${{ env.SOLUTION_NAME }} /t:Restore /p:${{ env.Configuration }}
-        env:
-          Configuration: ${{ matrix.configuration }} 
-      - run: dotnet restore ${{ env.PROJECT_PATH }}
+        # run: msbuild ${{ env.SOLUTION_NAME }} /t:Restore /p:${{ env.Configuration }}
+        # env:
+        #   Configuration: ${{ matrix.configuration }} 
+        run: dotnet restore ${{ env.PROJECT_PATH }}
       #Create the app
       - name: Create the app
         run: dotnet build ${{ env.PROJECT_PATH }} -c Release
