@@ -29,7 +29,6 @@
 
     </ItemGroup>
 
-    <Copy SourceFiles="@(ANTLR)" DestinationFolder="$(OutDir)\icon" />
 
   </Target>
  
