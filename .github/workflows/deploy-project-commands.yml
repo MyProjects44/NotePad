@@ -27,7 +27,6 @@ jobs:
         uses: microsoft/setup-msbuild@v2
       
 
-      - run: md icon 
         #Restore the application
       - name: Restore the Application
         run: dotnet restore ${{ env.SOLUTION_NAME }}
