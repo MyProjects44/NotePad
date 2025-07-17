@@ -22,8 +22,12 @@ jobs:
         with:
           fetch-depth: 0
       - name: Create Release Folder
-        run: rsync -arv --exclude='.github/' --exlude='interfaces/' --exlude='obj/'
+        run: mkdir -arv --exclude='.github/' --exlude='interfaces/' --exlude='obj/'
           --exlude='.gitignore' --exlude='*.xaml' --exlude='*.cs'--exlude='*.csproj' --exlude='*.sln' --exlude='*.md'
+      
+      - name: Switch to Release Folder
+        run: cd release    
+
       - name: Istall .NET Core
         uses: actions/setup-dotnet@v4
         with:
