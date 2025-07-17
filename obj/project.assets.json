@@ -82,11 +82,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\C# Programmierung\\Github\\NotePad\\NotePad.csproj",
+      "projectUniqueName": "E:\\C# Programmierung\\Github\\NotePad\\NotePad.csproj",
       "projectName": "NotePad",
-      "projectPath": "e:\\C# Programmierung\\Github\\NotePad\\NotePad.csproj",
+      "projectPath": "E:\\C# Programmierung\\Github\\NotePad\\NotePad.csproj",
       "packagesPath": "C:\\Users\\athanasiosz\\.nuget\\packages\\",
-      "outputPath": "e:\\C# Programmierung\\Github\\NotePad\\obj\\",
+      "outputPath": "E:\\C# Programmierung\\Github\\NotePad\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\athanasiosz\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -137,6 +137,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "version": "[9.0.7, 9.0.7]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "version": "[9.0.7, 9.0.7]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+            "version": "[9.0.7, 9.0.7]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

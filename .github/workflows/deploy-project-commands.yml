@@ -32,15 +32,12 @@ jobs:
       
         #Restore the application
       - name: Restore the Application
-        # run: msbuild ${{ env.SOLUTION_NAME }} /t:Restore /p:${{ env.Configuration }}
-        # env:
-        #   Configuration: ${{ matrix.configuration }} 
         run: dotnet restore ${{ env.SOLUTION_NAME }}
       #Create the app
       - name: Create the app
-        run: dotnet build ${{ env.SOLUTION_NAME }} -c Release
+        run: dotnet build ${{ env.SOLUTION_NAME }} -c Release --no-restore
       
-      - run: dotnet publish ${{ env.SOLUTION_NAME }} -c Release -r win-x64
+      - run: dotnet publish ${{ env.SOLUTION_NAME }} -c Release -r win-x64 -p:PublishSingleFile=true --self-contained true --no-restore
       
       - uses: actions/create-release@v1
         id: create_release
@@ -53,6 +50,6 @@ jobs:
       - uses: csexton/release-asset-action@v3
         with: 
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          pattern: bin/Release/net9.0-windows/win-x64/publish/*.exe
+          pattern: bin/Release/net9.0-windows/win-x64/*.exe
           release-url: ${{ steps.create_release.outputs.upload_url }}
   
