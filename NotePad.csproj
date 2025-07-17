@@ -11,6 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="icon\icon.ico"/>
+  </ItemGroup>
+
+  <ItemGroup>
 
     <Resource Include="icon\*.ico"/>
 
@@ -28,4 +32,5 @@
     <Copy SourceFiles="@(ANTLR)" DestinationFolder="$(OutDir)\icon" />
 
   </Target>
+ 
 </Project>
