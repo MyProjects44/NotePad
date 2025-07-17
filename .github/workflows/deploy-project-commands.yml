@@ -55,6 +55,7 @@ jobs:
       - uses: csexton/release-asset-action@v3
         with: 
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          file: bin/Release/net9.0-windows/win-x64/icon
+          pattern: bin/Release/net9.0-windows/win-x64/icon
+          file: icon
           release-url: ${{ steps.create_release.outputs.upload_url }}
   
