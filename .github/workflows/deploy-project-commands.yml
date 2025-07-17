@@ -42,7 +42,7 @@ jobs:
       
       - run: dotnet publish ${{ env.PROJECT_PATH }} -c Release -r win-x64 --self-contained -p:PublishSingleFile=true
       
-      - uses: actions/create-release@v4
+      - uses: actions/create-release@v3
         id: create_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
