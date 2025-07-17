@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "is6s8VQJ3Yk=",
+  "dgSpecHash": "Smt+BvMSFZ8=",
   "success": true,
-  "projectFilePath": "E:\\C# Programmierung\\Github\\NotePad\\NotePad.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "e:\\C# Programmierung\\Github\\NotePad\\NotePad.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\athanasiosz\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.7\\microsoft.net.illink.tasks.9.0.7.nupkg.sha512"
+  ],
   "logs": []
 }
