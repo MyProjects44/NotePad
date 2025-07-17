@@ -5,17 +5,13 @@ on:
   push:
     tags:
       - "class-notepad/v*"
-permissions: 
-  issues: write
-  contents: read
+permissions: write-all
 env:
   SOLUTION_NAME: NotePad.sln
   PROJECT_PATH: NotePad.csproj
 jobs:
   build:
     strategy:
-      matrix:
-        configuration: [Release]
     runs-on: windows-latest
   
     steps:
@@ -57,6 +53,6 @@ jobs:
       - uses: csexton/release-asset-action@v3
         with: 
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          pattern: bin/Release/net9.0-windows/win-x64/icon/
+          pattern: bin/Release/net9.0-windows/win-x64/icon/*.
           release-url: ${{ steps.create_release.outputs.upload_url }}
   
