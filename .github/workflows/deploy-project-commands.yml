@@ -21,12 +21,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Create Release Folder
-        run: mkdir -arv --exclude='.github/' --exlude='interfaces/' --exlude='obj/'
-          --exlude='.gitignore' --exlude='*.xaml' --exlude='*.cs'--exlude='*.csproj' --exlude='*.sln' --exlude='*.md'
-      
-      - name: Switch to Release Folder
-        run: cd release    
 
       - name: Istall .NET Core
         uses: actions/setup-dotnet@v4
@@ -58,5 +52,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pattern: bin/Release/net9.0-windows/win-x64/publish/*.exe
           release-url: ${{ steps.create_release.outputs.upload_url }}
-
+      - uses: csexton/release-asset-action@v3
+        with: 
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pattern: bin/Release/net9.0-windows/win-x64/icon/
+          release-url: ${{ steps.create_release.outputs.upload_url }}
   
