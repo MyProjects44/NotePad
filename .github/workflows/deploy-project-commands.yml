@@ -5,7 +5,9 @@ on:
   push:
     tags:
       - "class-notepad/v*"
-permissions: write-all
+permissions: 
+  issues: write
+  contents: read
 env:
   SOLUTION_NAME: NotePad.sln
   PROJECT_PATH: NotePad.csproj
