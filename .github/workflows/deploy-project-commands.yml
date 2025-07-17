@@ -11,7 +11,6 @@ env:
   PROJECT_PATH: NotePad.csproj
 jobs:
   build:
-    strategy:
     runs-on: windows-latest
   
     steps:
