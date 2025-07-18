@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 using Forms = System.Windows.Forms;
 
@@ -16,7 +17,9 @@ namespace NotePad
         }
         protected override void OnStartup(StartupEventArgs e)
         {
-            _notifyIcon.Icon = new System.Drawing.Icon(@"icon\icon.ico");
+            Stream stream = Application.GetResourceStream(new Uri("pack://application:,,,/icon/icon.ico")).Stream;
+            _notifyIcon.Icon = new System.Drawing.Icon(stream);
+            //_notifyIcon.Icon = new System.Drawing.Icon(@"icon\icon.ico");
             _notifyIcon.Visible = true;
             _notifyIcon.DoubleClick += NotifyIcon_DoubleClick!;
             _notifyIcon.Text = "NotePad";
