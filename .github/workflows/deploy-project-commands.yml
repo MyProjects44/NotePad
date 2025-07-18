@@ -49,10 +49,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pattern: bin/Release/net9.0-windows/win-x64/publish/*.exe
           release-url: ${{ steps.create_release.outputs.upload_url }}
-      - run: cd icon
-      - uses: csexton/release-asset-action@v3
-        with: 
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          pattern: bin/Release/net9.0-windows/win-x64/icon/*.ico
-          release-url: ${{ steps.create_release.outputs.upload_url }}
   
